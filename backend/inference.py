@@ -17,7 +17,7 @@ def load_model(model_path='model/water_pollution_model.pth', classes_path='model
         with open(classes_path, 'r') as f:
             class_names = [line.strip() for line in f.readlines()]
     else:
-        # Default classes if not found
+
         class_names = ['algae', 'clean', 'plastic']
 
     num_classes = len(class_names)
