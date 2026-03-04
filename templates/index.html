@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Water Pollution Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-water"></i> EcoVision</h1>
+            <p>AI-Powered Water Pollution Detection system</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <div class="drag-area" id="drag-area">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drag & Drop to Upload</h3>
+                    <span>OR</span>
+                    <button id="browse-btn">Browse Image</button>
+                    <input type="file" id="file-input" hidden accept="image/*">
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button id="detect-btn" class="btn-primary" disabled>
+                    <i class="fas fa-search"></i> Detect Pollution
+                </button>
+            </div>
+
+            <!-- Loader -->
+            <div id="loader" class="loader-container hidden">
+                <div class="spinner"></div>
+                <p>Analyzing water quality...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="result-section" class="result-section hidden">
+                <div class="result-grid">
+                    <div class="image-preview-container">
+                        <img id="uploaded-image" src="" alt="Uploaded water image">
+                    </div>
+                    
+                    <div class="prediction-details">
+                        <h2>Analysis Result</h2>
+                        <div class="status-badge" id="status-badge">
+                            <i id="status-icon" class=""></i>
+                            <span id="prediction-text">Clean</span>
+                        </div>
+                        
+                        <div class="confidence-container">
+                            <p>Confidence Score: <span id="confidence-score-text">99%</span></p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="confidence-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="probabilities-box">
+                            <h3>Detailed Analysis</h3>
+                            <ul id="probabilities-list">
+                                <!-- Dynamic items here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
